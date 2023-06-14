@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "My Custom Font";
+    src: url("fonts/AgameeI.TTF") format("truetype");
+}
+body{
+    margin: 50px;
+    font-family: "My Custom Font", sans-serif;
+    color:#3D3D3D;
+    background-color: #F5F5F5; 
+}
+.english {
+    font-family: 'Courier New', Courier, monospace;
+}
+/* header area */
+.header {
+    display: flex;
+}
+
+.image-section {
+    flex: 1;
+}
+.image-section img{
+    height: 150px;
+}
+
+/* promotional */
+
+.promotional {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .promotional .english {
+    margin-right: 10px;
+  }
+  
+  .promotional .tagline {
+    margin-left: 10px;
+  }
+
+/* navigation area */
+.nav-area{
+    margin: 30px 0px 50px 0px;
+    text-align: center;
+    background-color: #006A4E;
+    color: #F7FEFD;
+}
+
+.nav-area p{
+    padding: 8px;
+    font-weight: 400;
+}
+
+/* main article */
+
+.article {
+    column-count: 3; /* Set the number of columns */
+    column-gap: 20px; /* Set the gap between columns */
+    text-align: justify;
+}
+
+.image {
+    filter: grayscale(100%);
+}
+
+.sourse {
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/* footer area  */
+.footer {
+    text-align: center;
+    margin: 100px 0px 50px 0px;
+    font-weight: 600;
+
+}
+
+@media screen and (max-width: 768px) {
+    .article {
+        column-count: 1; /* Switch to a single column on smaller screens */
+    }
+}

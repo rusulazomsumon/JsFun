@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Example</title>
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1521747116042-5a810fda9665');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    body[data-theme="dark"] {
+      background-color: #333;
+    }
+    
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .theme-switch {
+      display: inline-block;
+      height: 34px;
+      position: relative;
+      width: 60px;
+    }
+    
+    .theme-switch input {
+      display:none;
+    }
+    
+    .slider {
+      background-color: #ccc;
+      border-radius: 34px;
+      cursor: pointer;
+      height: 100%;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+    }
+    
+    .slider:before {
+      background-color: #fff;
+      border-radius: 50%;
+      content: "";
+      height: 26px;
+      left: 4px;
+      position: absolute;
+      top: 4px;
+      transition: all 0.3s ease-in-out;
+      width: 26px;
+    }
+    
+    input[type="checkbox"]:checked + .slider {
+      background-color: #2196F3;
+    }
+    
+    input[type="checkbox"]:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    
+    h1 {
+      font-size: 4rem;
+      margin-top: 200px;
+      text-align: center;
+      text-shadow: 2px 2px #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider"></div>
+    </label>
+  </div>
+  
+  <h1>Hello, World!</h1>
+  
+  <script>
+    var toggleSwitch = document.querySelector('#checkbox');
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+        else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }    
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+
+    if (localStorage.getItem('theme') === 'dark') {
+        toggleSwitch.checked = true;
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+</body>
+</html>
