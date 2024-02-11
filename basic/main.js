@@ -1,4 +1,6 @@
-// genaral function 
+// genaral function 0. Named Functions:
+
+
 // let x = 5;
 // let y = 4;
 // function sum(a, b){
@@ -14,6 +16,12 @@
 
 // const hi = () => console.log("Hi");
 // hi();
+// ******************. Function Expressions:*******************
+// const sayHello = function(name) {
+//     return "Hi, " + name + "!";
+//   };
+  
+//   console.log(sayHello("Bob"));  
 
 // **************2. Anonymous function**************
 // const buttonClickHandler = function() {
