@@ -73,3 +73,57 @@ Handle Promises more seamlessly without nested .then() callbacks.
   
 //   fetchData().then(data => console.log(data)); //output: 1
 
+// ***************5. Constructor Functions***********************
+/* 
+Used to create objects with a specific prototype and associated properties and methods.
+Invoked using the new keyword.
+*/
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.greet = function() {
+//       console.log("Hello, my name is " + this.name + "!");
+//     };
+//   }
+  
+//   const person1 = new Person("Alice", 30);
+//   person1.greet(); // Output: Hello, my name is Alice!
+
+// ***************6. Callback Functions***********************
+/* 
+Functions passed as arguments to other functions to be executed later.
+Common in asynchronous programming and event handling.
+*/
+
+// setTimeout(function() {
+//     console.log("This message will appear after 2 seconds.");
+//   }, 2000);
+
+// ****************9. IIFE (Immediately-Invoked Function Expression):********************
+/*
+Function expression wrapped in parentheses and followed by execution operators () to call it immediately.
+Useful for creating private variables and preventing variables from polluting the global scope.
+ */
+
+// (function() {
+//     const privateVariable = "This is a private variable!";
+//     console.log(privateVariable);
+//   })();
+  
+  // console.log(privateVariable); // Error: privateVariable is not defined
+
+//   *****************10. Method Functions:************
+/*
+Functions defined as properties of objects.
+Can access the object's properties and methods using this keyword.
+*/
+
+const person = {
+    name: "Bob",
+    greet: function() {
+      console.log("Hello, I'm " + this.name + ".");
+    }
+  };
+  
+  person.greet(); // Output: Hello, I'm Bob.
