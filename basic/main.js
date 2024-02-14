@@ -119,11 +119,43 @@ Functions defined as properties of objects.
 Can access the object's properties and methods using this keyword.
 */
 
-const person = {
-    name: "Bob",
-    greet: function() {
-      console.log("Hello, I'm " + this.name + ".");
-    }
-  };
+// const person = {
+//     name: "Bob",
+//     greet: function() {
+//       console.log("Hello, I'm " + this.name + ".");
+//     }
+//   };
   
-  person.greet(); // Output: Hello, I'm Bob.
+//   person.greet(); // Output: Hello, I'm Bob.
+
+// *****************JS Hosisting***************
+/* 
+Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compilation phase. This means that regardless of where variables and functions are declared within a scope, they are treated as if they are declared at the top of the scope.
+
+However, it's important to note that only the declarations are hoisted, not the initializations or assignments. Let me illustrate with some examples:
+*/
+
+// console.log(x); // undefined
+// var x = 5;  
+
+/* In the above example, even though we're trying to log the value of x before it's assigned, we won't get an error. This is because variable declarations (var x) are hoisted to the top of the scope, but the initialization (= 5) remains where it is. So, when console.log(x) is executed, x exists but has the value undefined.
+
+Similarly, function declarations are hoisted as well:
+*/
+// foo(); // "Hello, world!"
+
+// function foo() {
+//   console.log("Hello, world!");
+// }
+
+/* 
+
+In this example, the function foo() is called before its actual declaration, but it still works fine because the function declaration is hoisted to the top of the scope.
+
+However, function expressions are not hoisted in the same way as function declarations:
+*/
+// bar(); // TypeError: bar is not a function
+
+// var bar = function() {
+//   console.log("Hi there!");
+// };
